@@ -1,3 +1,5 @@
+package Projects.untitled.src;
+
 import java.util.Scanner;
 
 public class Demo {

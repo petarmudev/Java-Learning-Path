@@ -8,6 +8,7 @@ public class Demo_Arrays {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please input array numbers, separated by space");
+
         int[] numbers = Arrays.stream(scanner.nextLine().split(" "))
                 .mapToInt(Integer::parseInt)
                 .toArray();

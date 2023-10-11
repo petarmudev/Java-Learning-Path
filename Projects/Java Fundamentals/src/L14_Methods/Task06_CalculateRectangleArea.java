@@ -8,11 +8,11 @@ public class Task06_CalculateRectangleArea {
 
         double width = Double.parseDouble(scanner.nextLine());
         double height = Double.parseDouble(scanner.nextLine());
-        rectangleAreaCalc(width, height);
+        System.out.printf("%.0f%n", rectangleAreaCalc(width, height));
 
     }
 
-    public static double rectangleAreaCalc (double width, double height){
+    public static double rectangleAreaCalc(double width, double height) {
         return width * height;
     }
 }

@@ -13,31 +13,29 @@ public class Zad10_TheLiftV2 {
                 .mapToInt(Integer::parseInt)
                 .toArray();
 
-        int totalPeople = people;
-
-        for (int count : wagons) {
-            totalPeople += count;
-        }
-        int totalAboard = totalPeople;
+        // 15
+        // 0 0 2 0
+        boolean liftFull = true;
         for (int i = 0; i < wagons.length; i++) {
-            if (totalAboard > 4) {
-                wagons[i] = 4;
-                totalAboard -= 4;
-            }else if (totalAboard > 0 ){
-                wagons[i]=totalAboard;
-                totalAboard = 0;
-
+            int freeSpace = 4 - wagons[i];
+            if (freeSpace > 0) {
+                if (freeSpace > people) {
+                    wagons[i] += people;
+                    people = 0;
+                    liftFull = false;
+                } else {
+                    wagons[i] = 4;
+                    people -= freeSpace;
+                }
             }
         }
-
-        if (wagons.length * 4 > totalPeople) {
+        if (!liftFull) {
             System.out.println("The lift has empty spots!");
-
-        } else if (wagons.length * 4 < totalPeople) {
-            System.out.printf("There isn't enough space! %d people in a queue!%n", totalAboard);
+        } else if (people > 0) {
+            System.out.printf("There isn't enough space! %d people in a queue!%n", people);
         }
-        for (int peopleAboard : wagons) {
-            System.out.print(peopleAboard + " ");
+        for (int wagon : wagons) {
+            System.out.print(wagon + " ");
         }
     }
 }

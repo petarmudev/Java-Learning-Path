@@ -3,7 +3,7 @@ package L12_ExerciseArrays;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Zad05_TopIntegers {
+public class Zad05_TopIntegersV2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         /*
@@ -21,17 +21,21 @@ public class Zad05_TopIntegers {
                         .split(" "))
                 .mapToInt(Integer::parseInt)
                 .toArray();
-        int maxNumber = Integer.MIN_VALUE;
-        int index = 0;
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] > maxNumber) {
-                maxNumber = numbers[i];
-                index = i;
-            }
 
+        for (int index = 0; index < numbers.length - 1; index++) {
+            int currentNumber = numbers[index];
+            boolean isBigger = true;
+            for (int indexNext = index + 1; indexNext <= numbers.length - 1; indexNext++) {
+                int currentNextNumber = numbers[indexNext];
+                if (currentNumber <= currentNextNumber) {
+                    isBigger = false;
+                    break;
+                }
+            }
+            if (isBigger) {
+                System.out.print(currentNumber + " ");
+            }
         }
-        for (int i = index; i < numbers.length; i++) {
-            System.out.print(numbers[i] + " ");
-        }
+        System.out.print(numbers[numbers.length - 1]);
     }
 }

@@ -18,20 +18,29 @@ public class Task04_PasswordValidator {
 
         String password = scanner.nextLine().toUpperCase();
         boolean isOkay = true;
-        if (password.length() > 10 || password.length() < 6) {
+        if (!checkPasswordLenght(password)) {
             System.out.println("Password must be between 6 and 10 characters");
             isOkay = false;
         }
+
         if (!checkForDigitsAndLettersOnly(password)) {
             System.out.println("Password must consist only of letters and digits");
             isOkay = false;
         }
-        if (isOkay){
-            System.out.println("Password is valid");
-        }else {
-            System.out.println("Parolata ne e okay");
+        if (!checkForAtLeast2Digits(password)) {
+            System.out.println("Password must have at least 2 digits");
+            isOkay = false;
         }
+        if (isOkay) {
+            System.out.println("Password is valid");
+        }
+    }
 
+    public static boolean checkPasswordLenght(String password) {
+        if (password.length() > 10 || password.length() < 6) {
+            return false;
+        }
+        return true;
     }
 
     public static boolean checkForDigitsAndLettersOnly(String password) {
@@ -47,10 +56,16 @@ public class Task04_PasswordValidator {
         return true;
     }
 
-    public static boolean checkForAtLeast2Digits(String password){
+    public static boolean checkForAtLeast2Digits(String password) {
+        int count2Digits = 0;
         for (int i = 0; i < password.length(); i++) {
-
+            if (password.charAt(i) > 47 && password.charAt(i) < 58) {
+                count2Digits++;
+            }
         }
-        if ()
+        if (count2Digits >= 2) {
+            return true;
+        }
+        return false;
     }
 }

@@ -29,7 +29,7 @@ Regular Expressions - cheat sheet
 (?<name> шаблон) -> обособяваме група с име
 
 Използване в Java:
-String text = scanner.nextLine();
-String regex = "\\b[A-Z][a-z]+ [A-Z][a-z]+\\b"; //текст на шаблона
-Pattern pattern = Pattern.compile(regex); // шаблон
-Matcher matcher = pattern.matcher(text); //текстовете от променливата text, които отговарят на шаблона
+//String text = scanner.nextLine();
+//String regex = "\\b[A-Z][a-z]+ [A-Z][a-z]+\\b"; //текст на шаблона
+//Pattern pattern = Pattern.compile(regex); // шаблон
+//Matcher matcher = pattern.matcher(text); //текстовете от променливата text, които отговарят на шаблона

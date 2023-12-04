@@ -1,5 +1,3 @@
-package L03_StacksAndQueues;
-
 import java.util.ArrayDeque;
 import java.util.Scanner;
 

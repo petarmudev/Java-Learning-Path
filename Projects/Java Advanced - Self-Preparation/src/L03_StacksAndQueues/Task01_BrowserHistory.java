@@ -1,3 +1,5 @@
+package L03_StacksAndQueues;
+
 import java.util.ArrayDeque;
 import java.util.Scanner;
 
@@ -16,6 +18,8 @@ public class Task01_BrowserHistory {
             if (input.equals("back")) {
                 if (history.size() == 1) {
                     System.out.println(defaultMsg);
+                } else if (history.isEmpty()) {
+                    System.out.println(defaultMsg);
                 } else {
                     history.pop();
                     if (history.isEmpty()) {
@@ -24,7 +28,7 @@ public class Task01_BrowserHistory {
                         System.out.println(history.peek());
                     }
                 }
-            } else {
+            } else {        //New address (not "back button"")
                 history.push(input);
                 System.out.println(input);
             }

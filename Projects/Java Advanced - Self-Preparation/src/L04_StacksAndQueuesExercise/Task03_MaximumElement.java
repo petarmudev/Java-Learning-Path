@@ -25,7 +25,6 @@ public class Task03_MaximumElement {
                     System.out.println(Collections.max(stack));
                     break;
             }
-
         }
     }
 }

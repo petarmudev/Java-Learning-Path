@@ -37,18 +37,40 @@ public class Task08_UserLogs {
         //Print:
 //        "username:
 //        {IP} => {count}, {IP} => {count}."
+
+        //Print v1.0:
         data.keySet().forEach(username -> {
-            System.out.println(username + ":");
+            System.out.println(username + ": ");
             Map<String, Integer> ipList = data.get(username);
-            int size = ipList.size();
+            final int[] size = {ipList.size()};
             ipList.entrySet().forEach(entry -> {
-                if (size > 0) {
+                if (size[0] > 1) {
                     System.out.println(entry.getKey() + " => " + entry.getValue() + ", ");
-                    size-=1;
+                    size[0] -= 1;
                 } else {
                     System.out.println(entry.getKey() + " => " + entry.getValue() + ".");
                 }
             });
+        });
+
+        System.out.println("*************************************************");
+        //Print v2.0:
+        data.entrySet().forEach(entry -> {
+            System.out.println(entry.getKey() + ": ");
+            LinkedHashMap<String, Integer> iplist = entry.getValue();
+            int ipCount = iplist.size();
+            int currentIpIndex = 0;
+
+            for (Map.Entry<String, Integer> ipEntry : iplist.entrySet()) {
+                System.out.print(ipEntry.getKey() + " => " + ipEntry.getValue());
+                if (currentIpIndex < ipCount - 1) {
+                    System.out.println(", ");
+                } else {
+                    System.out.println(".");
+                }
+                currentIpIndex++;
+            }
+            // System.out.println();
         });
     }
 }

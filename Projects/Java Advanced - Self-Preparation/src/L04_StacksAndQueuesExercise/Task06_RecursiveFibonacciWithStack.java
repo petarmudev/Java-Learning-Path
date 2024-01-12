@@ -11,10 +11,9 @@ public class Task06_RecursiveFibonacciWithStack {
         stack.push(0L);
         stack.push(1L);
 
-
         int n = Integer.parseInt(scanner.nextLine());
 
-        if (n < 2){
+        if (n < 2) {
             System.out.println(1);
             return;
         }
@@ -29,6 +28,5 @@ public class Task06_RecursiveFibonacciWithStack {
             stack.push(num1 + num2);
         }
         System.out.println(stack.pop());
-
     }
 }

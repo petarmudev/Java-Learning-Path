@@ -12,8 +12,6 @@ public class Task06_StringMatrixRotation {
                 .split("\\(")[1]
                 .replaceAll("\\)", ""));
         int rotationAngle = rotation % 360;
-        //String rotation = scanner.nextLine();
-        //int angleRotation = Integer.parseInt(rotation.split("[()]+")[1]) % 360;
 
         String input = scanner.nextLine();
         List<String> words = new ArrayList<>();

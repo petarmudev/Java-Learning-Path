@@ -16,7 +16,6 @@ public class Task05_BalancedParentheses {
         } else {
             System.out.println("NO");
         }
-
     }
 
     private static boolean isBalanced(List<String> input) {

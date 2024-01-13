@@ -33,14 +33,13 @@ public class Task11_ReverseMatrixDiagonals {
             System.out.println();
         }
 
-        //Print the second part - rows decending part
+        //Print the second part - rows descending part
         for (int r = rowsLenght - 1; r >= 0; r--) {
             for (int row = r, col = 0; row >= 0 && col < colsLenght; row--, col++) {
                 System.out.print(matrix[row][col] + " ");
             }
             System.out.println();
         }
-
     }
 
     private static void readMatrix(int[][] matrix, Scanner scanner) {

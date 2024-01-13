@@ -22,20 +22,20 @@ public class Task11_ReverseMatrixDiagonals {
     }
 
     private static void printReversedDiagonalMatrix(int[][] matrix) {
-        int rows = matrix.length;
-        int cols = matrix[0].length;
+        int rowsLenght = matrix.length;
+        int colsLenght = matrix[0].length;
 
-        //Print the first part
-        for (int c = cols - 1; c > 0; c--) {
-            for (int row = rows - 1, col = c; row >= 0 && col < cols; row--, col++) {
+        //Print the first part - columns descending part
+        for (int c = colsLenght - 1; c > 0; c--) {
+            for (int row = rowsLenght - 1, col = c; row >= 0 && col < colsLenght; row--, col++) {
                 System.out.print(matrix[row][col] + " ");
             }
             System.out.println();
         }
 
-        //Print the second part
-        for (int r = rows - 1; r >= 0; r--) {
-            for (int row = r, col = 0; row >= 0 && col < cols; row--, col++) {
+        //Print the second part - rows decending part
+        for (int r = rowsLenght - 1; r >= 0; r--) {
+            for (int row = r, col = 0; row >= 0 && col < colsLenght; row--, col++) {
                 System.out.print(matrix[row][col] + " ");
             }
             System.out.println();

@@ -11,10 +11,8 @@ import java.util.Set;
 public class Task02_WriteToFile {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String pathIn = "C:\\Users\\Petar\\Documents\\GitHub\\Java-Learning-Path\\" +
-                "Projects\\Java Advanced - Self-Preparation\\src\\" +
-                "L09_StreamsFilesAndDirectories\\04. Java-Advanced-Files-and-Streams-Lab-Resources\\input.txt";
-        String pathOut = "C:\\Users\\Petar\\Documents\\GitHub\\Java-Learning-Path\\Projects\\Java Advanced - Self-Preparation\\src\\L09_StreamsFilesAndDirectories\\04. Java-Advanced-Files-and-Streams-Lab-Resources\\02.WriteToFileOutput.txt";
+        String pathIn = "C:\\Users\\Petar\\Documents\\GitHub\\Java-Learning-Path\\Projects\\Java Advanced - Self-Preparation\\src\\L09_StreamsFilesAndDirectories\\Root Files\\input.txt";
+        String pathOut = "C:\\Users\\Petar\\Documents\\GitHub\\Java-Learning-Path\\Projects\\Java Advanced - Self-Preparation\\src\\L09_StreamsFilesAndDirectories\\Root Files\\02.WriteToFileOutput.txt";
         Set<Character> forbiddenSymbols = new HashSet<>();
         Collections.addAll(forbiddenSymbols, '.', ',', '!', '?');
 

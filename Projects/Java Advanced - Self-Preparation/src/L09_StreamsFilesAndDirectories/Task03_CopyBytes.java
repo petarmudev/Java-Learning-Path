@@ -9,10 +9,8 @@ public class Task03_CopyBytes {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String pathIn = "C:\\Users\\Petar\\Documents\\GitHub\\Java-Learning-Path\\" +
-                "Projects\\Java Advanced - Self-Preparation\\src\\" +
-                "L09_StreamsFilesAndDirectories\\04. Java-Advanced-Files-and-Streams-Lab-Resources\\input.txt";
-        String pathOut = "C:\\Users\\Petar\\Documents\\GitHub\\Java-Learning-Path\\Projects\\Java Advanced - Self-Preparation\\src\\L09_StreamsFilesAndDirectories\\04. Java-Advanced-Files-and-Streams-Lab-Resources\\03.CopyBytesOutput.txt";
+        String pathIn = "C:\\Users\\Petar\\Documents\\GitHub\\Java-Learning-Path\\Projects\\Java Advanced - Self-Preparation\\src\\L09_StreamsFilesAndDirectories\\Root Files\\input.txt";
+        String pathOut = "C:\\Users\\Petar\\Documents\\GitHub\\Java-Learning-Path\\Projects\\Java Advanced - Self-Preparation\\src\\L09_StreamsFilesAndDirectories\\Root Files\\03.CopyBytesOutput.txt";
 
         try (FileInputStream fileInput = new FileInputStream(pathIn);
              FileOutputStream fileOutput = new FileOutputStream(pathOut)) {

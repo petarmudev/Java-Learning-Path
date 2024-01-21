@@ -13,7 +13,7 @@ public class Task01_SumLines {
         //1 Прочетем всички редове от файла
         //2. Обходим всеки един ред, намирам сумата на ASCII елементите и принтирам
 
-        String path = "C:\\Users\\Petar\\Desktop\\04. Java-Advanced-Streams-Files-and-Directories-Resources (1)\\04. Java-Advanced-Files-and-Streams-Exercises-Resources\\input.txt";
+        String path = "C:\\Users\\Petar\\Desktop\\04. Java-Advanced-Files-and-Streams-Exercises-Resources\\input.txt";
 
         List<String> allLines = Files.readAllLines(Path.of(path));
 

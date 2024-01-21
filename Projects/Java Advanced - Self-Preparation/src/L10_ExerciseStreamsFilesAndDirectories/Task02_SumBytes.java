@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Task02_SumBytes {
     public static void main(String[] args) {
 
-        String path = "C:\\Users\\Petar\\Desktop\\04. Java-Advanced-Streams-Files-and-Directories-Resources (1)\\04. Java-Advanced-Files-and-Streams-Exercises-Resources\\input.txt";
+        String path = "C:\\Users\\Petar\\Desktop\\04. Java-Advanced-Files-and-Streams-Exercises-Resources\\input.txt";
 
         long sum = 0;
 

@@ -1,4 +1,4 @@
-package ExamPreparationDesislava;
+package ExamSelfPreparation;
 
 import java.util.Scanner;
 

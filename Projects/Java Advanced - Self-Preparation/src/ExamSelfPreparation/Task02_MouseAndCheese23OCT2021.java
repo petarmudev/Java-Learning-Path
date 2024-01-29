@@ -1,8 +1,6 @@
-package ExamPreparationDesislava;
+package ExamSelfPreparation;
 
-import java.util.Arrays;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class Task02_MouseAndCheese23OCT2021 {
     public static void main(String[] args) {

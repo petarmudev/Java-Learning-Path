@@ -7,7 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         //https://softuni.bg/trainings/resources/video/68580/video-28-january-2022-desislava-topuzakova-java-advanced-january-2022/3586
-        //Дълга е и започва от: 58:29ч. , до...май... си... - 2:00:00ч.
+        //Дълга е и започва от: 58:29ч. , до...май... си... - 2:10:00ч.
         // 1:48:03
 
         int n = Integer.parseInt(scanner.nextLine());
@@ -46,21 +46,20 @@ public class Main {
         }
         //Department -> List<Employee> employee
         //отдел -> average salary
+
         String maxAverageSalaryDepartment = departmentsList.entrySet().stream()
                 .max(Comparator.comparingDouble(entry -> getAverageSalary(entry.getValue())))
-                .get() //От Optional на горния ред го "превръщам" в списък със служителите на отдела с най-висока заплата
+                .get() //От Optional на горния ред го "превръщам" в entry<K, V> - списък със служителите на отдела с най-висока заплата
                 .getKey(); //От тук получава името на отдела с най-висока заплата
         System.out.printf("Highest Average Salary: %s%n", maxAverageSalaryDepartment);
         List<Employee> employeeList = departmentsList.get(maxAverageSalaryDepartment);
         employeeList.sort(Comparator.comparingDouble(employee -> employee.getSalary()));
         Collections.reverse(employeeList);
 
+        //departmentsList.get(max)
         for (Employee employee : employeeList) {
             System.out.println(employee);
         }
-
-
-
     }
 
     public static double getAverageSalary(List<Employee> employees) {

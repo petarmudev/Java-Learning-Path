@@ -83,11 +83,12 @@ public class Employee {
         this(name, salary, position, department);
         this.age = age;
     }
-    @Override
-    public String toString () {
-        StringBuilder builder = new StringBuilder();
-        builder.append(name + " ").append(salary + " ").append(email + " ").append(age);
-        return builder.toString();
-    }
 
+    @Override
+    public String toString() {
+//        StringBuilder builder = new StringBuilder();
+//        builder.append(name + " ").append(String.format("%.2f ", salary).append(email + " ").append(age);
+//        return builder.toString();
+        return String.format("%s %.2f %s %d", name, salary, email, age);
+    }
 }

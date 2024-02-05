@@ -11,5 +11,12 @@ public class Node {
     public Node(int currentValue){
         this.currentValue = currentValue;
     }
+    //Printing -> only the Node's currentValue -> String
+    @Override
+    public String toString() {
+        return this.currentValue+""; //String
+    }
+
+
     
 }

@@ -16,13 +16,28 @@ public class CustomStack {
         this.size = INITIAL_SIZE;
         this.capacity = INITIAL_CAPACITY;
     }
-    //push -> adds element at the end
-    //peek -> returns the last element
 
     public void push(int element) {
+        //push -> adds element at the end
         this.ensureCapacity();
         this.data[this.size] = element;
         this.size++;
+    }
+
+    public int pop() {
+        //pop -> removes and returns the last element
+        this.size--;
+        if (this.capacity / this.size > SHRING_THRESHOLD) {  //Check for too big(unused) capacity
+            this.shrink();
+        }
+        int itemToPop = this.data[size];
+        this.data[size] = 0; //delete if from the array
+        return itemToPop; //return the item
+    }
+
+    public int peek() {
+        //peek -> returns the last element
+        return this.data[size - 1];
     }
 
     private void ensureCapacity() {
@@ -41,21 +56,6 @@ public class CustomStack {
         this.data = tempData;
     }
 
-    //pop -> removes and returns the last element
-    public int pop() {
-        this.size--;
-        if (this.capacity / this.size > SHRING_THRESHOLD) {  //Check for too big(unused) capacity
-            this.shrink();
-        }
-        int itemToPop = this.data[size];
-        this.data[size] = 0; //delete if from the array
-        return itemToPop; //return the item
-    }
-
-    public int peek() {
-        return this.data[size - 1];
-    }
-
 
     public void ensureStackNotEmpty() {
         if (this.size == 0) {
@@ -72,6 +72,7 @@ public class CustomStack {
         }
         this.data = temp;
     }
+
     //todo forEach()
     public void forEach(Consumer<Integer> consumer) {
         for (int i = 0; i < this.size; i++) {

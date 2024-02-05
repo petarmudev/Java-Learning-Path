@@ -1,4 +1,4 @@
-package L15_Workshop.SmartArray;
+package L15_Workshop_SmartArray;
 
 import java.util.function.Consumer;
 

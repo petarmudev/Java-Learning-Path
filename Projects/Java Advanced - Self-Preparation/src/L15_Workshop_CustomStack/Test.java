@@ -10,6 +10,7 @@ public class Test {
         for (int i = 0; i < 6; i++) {
             customStack.push(i);
         }
+        customStack.pop();
         System.out.println(customStack.pop());
 
         customStack.forEach(System.out::println);

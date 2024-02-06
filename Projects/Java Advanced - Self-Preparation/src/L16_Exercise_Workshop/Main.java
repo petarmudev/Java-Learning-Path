@@ -21,6 +21,7 @@ public class Main {
         linkedList.forEach(el -> System.out.println(el));
         int[] array = linkedList.toArray();
         System.out.println(Arrays.toString(array));
+        System.out.println();
 
     }
 }

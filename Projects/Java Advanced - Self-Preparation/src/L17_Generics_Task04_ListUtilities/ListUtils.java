@@ -23,7 +23,7 @@ public class ListUtils {
                 currentMin = currentElement;
             }
         }
-        return currentMin; //...до тук. Или долното ->
+        return currentMin; //...до тук. Или следното ->
         //-> return Collections.min(list);
     }
 }

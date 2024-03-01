@@ -1,0 +1,7 @@
+package L07_Inheritance.Task02_HierarchicalInheritance;
+
+public class Animal {
+    public void eat() {
+        System.out.println("eating...");
+    }
+}

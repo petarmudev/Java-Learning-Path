@@ -3,6 +3,7 @@ package L14_Exercise_Solid_Feb2022;
 import L14_Exercise_Solid_Feb2022.appenders.Appender;
 import L14_Exercise_Solid_Feb2022.appenders.ConsoleAppender;
 import L14_Exercise_Solid_Feb2022.appenders.FileAppender;
+import L14_Exercise_Solid_Feb2022.appenders.XmlAppender;
 import L14_Exercise_Solid_Feb2022.layouts.Layout;
 import L14_Exercise_Solid_Feb2022.layouts.SimpleLayout;
 import L14_Exercise_Solid_Feb2022.layouts.XmlLayout;
@@ -61,7 +62,13 @@ public class Controller {
     }
 
     private static Appender createAppender(String appenderType, Layout layout) {
-        return appenderType.equals("ConsoleAppender") ? new ConsoleAppender(layout) : new FileAppender(layout, new LogFile());
+        return switch (appenderType) {
+            case "ConsoleAppender" -> new ConsoleAppender(layout);
+            case "FileAppender" -> new FileAppender(layout, new LogFile());
+            case "XmlAppender" -> new XmlAppender(layout);
+            default -> throw new IllegalStateException("Unexpected appender type: " + appenderType);
+        };
+        
     }
 
     private static Layout createLayout(String layoutType) {

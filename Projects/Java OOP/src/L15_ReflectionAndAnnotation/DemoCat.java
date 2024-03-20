@@ -5,10 +5,14 @@ public class DemoCat {
     //Lombok
     //@Getter
     //@Setter
+
     private String name;
     private String lastName;
     private String owner;
     private int age;
 
 
+    public String getName() {
+        return this.name;
+    }
 }

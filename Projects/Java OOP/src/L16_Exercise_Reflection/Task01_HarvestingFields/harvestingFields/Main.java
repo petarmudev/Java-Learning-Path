@@ -1,4 +1,4 @@
-package harvestingFields;
+package L16_Exercise_Reflection.Task01_HarvestingFields.harvestingFields;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -48,11 +48,12 @@ public class Main {
 
     private static Map<String, List<Field>> getFieldsMap(Class<RichSoilLand> richSoilLandClass) {
         Map<String, List<Field>> map = new HashMap<>();
+
         map.put("private", new ArrayList<>());
         map.put("public", new ArrayList<>());
         map.put("protected", new ArrayList<>());
-        List<Field> fieldsList = Arrays.asList(richSoilLandClass.getDeclaredFields());
 
+        List<Field> fieldsList = Arrays.asList(richSoilLandClass.getDeclaredFields());
         map.put("all", fieldsList);
 
         fieldsList.forEach(field -> {

@@ -1,6 +1,7 @@
 package L22_ExerciseTestDrivenDevelopment.Chainblock;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ChainblockImpl implements Chainblock {
 
@@ -77,15 +78,43 @@ public class ChainblockImpl implements Chainblock {
     }
 
     public Iterable<String> getAllSendersWithTransactionStatus(TransactionStatus status) {
-        return null;
+        List<Transaction> filteredTransactions = new ArrayList<>();
+        this.getByTransactionStatus(status).forEach(filteredTransactions::add);
+        //1. invalid or no such status -> throw exception
+        if (filteredTransactions.size() == 0) {
+            throw new IllegalArgumentException();
+        }
+        //2. valid status:
+        filteredTransactions
+                .stream()
+                .sorted(Comparator.comparing(Transaction::getAmount).reversed())
+                .collect(Collectors.toList());
+        List<String> senders = filteredTransactions.stream().map(Transaction::getFrom).collect(Collectors.toList());
+        return senders;
     }
 
     public Iterable<String> getAllReceiversWithTransactionStatus(TransactionStatus status) {
-        return null;
+        List<Transaction> filteredTransactions = new ArrayList<>();
+        this.getByTransactionStatus(status).forEach(filteredTransactions::add);
+        //1. invalid or no such status -> throw exception
+        if (filteredTransactions.size() == 0) {
+            throw new IllegalArgumentException();
+        }
+        //2. valid status:
+        filteredTransactions
+                .stream()
+                .sorted(Comparator.comparing(Transaction::getAmount).reversed())
+                .collect(Collectors.toList());
+        List<String> receivers = filteredTransactions.stream().map(Transaction::getTo).collect(Collectors.toList());
+        return receivers;
     }
 
     public Iterable<Transaction> getAllOrderedByAmountDescendingThenById() {
-        return null;
+        return this.transactionMap.values()
+                .stream()
+                .sorted(Comparator.comparing(Transaction::getAmount).reversed()
+                        .thenComparing(Transaction::getId))
+                .collect(Collectors.toList());
     }
 
     public Iterable<Transaction> getBySenderOrderedByAmountDescending(String sender) {

@@ -1,6 +1,6 @@
 package L19_UnitTesting.rpg_lab;
 
-public class Axe {
+public class Axe implements Weapon {
 
     private int attackPoints;
     private int durabilityPoints;
@@ -16,6 +16,16 @@ public class Axe {
 
     public int getDurabilityPoints() {
         return this.durabilityPoints;
+    }
+
+    @Override
+    public void attack(Target target) {
+        if (this.durabilityPoints <= 0) {
+            throw new IllegalStateException("Axe is broken.");
+        }
+
+        target.takeAttack(this.attackPoints);
+        this.durabilityPoints -= 1;
     }
 
     public void attack(Dummy target) {
